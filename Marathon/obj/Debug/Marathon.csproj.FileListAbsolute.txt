@@ -143,3 +143,5 @@ C:\Users\Роман\OneDrive - vyatsu\Рабочий стол\учеба\Нов�
 C:\Users\Роман\OneDrive - vyatsu\Рабочий стол\учеба\Новая папка (2)\marathon\Marathon\obj\Debug\Marathon.exe
 C:\Users\Роман\OneDrive - vyatsu\Рабочий стол\учеба\Новая папка (2)\marathon\Marathon\obj\Debug\Marathon.pdb
 C:\Users\Роман\OneDrive - vyatsu\Рабочий стол\учеба\Новая папка (2)\marathon\Marathon\obj\Debug\Marathon.csprojAssemblyReference.cache
+C:\Users\Роман\OneDrive - vyatsu\Рабочий стол\учеба\Новая папка (2)\marathon\Marathon\bin\Debug\Marathon.exe.config
+C:\Users\Роман\OneDrive - vyatsu\Рабочий стол\учеба\Новая папка (2)\marathon\Marathon\obj\Debug\Marathon.Sponsors.ConfirmDonate.resources

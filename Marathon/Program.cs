@@ -9,7 +9,7 @@ namespace Marathon
 {
     static class Program
     {
-        public static MySqlConnection connection = new MySqlConnection("server=" +
+        public static MySqlConnection connectuon = new MySqlConnection("server=" +
              "141.8.192.58;" +
              "user=a0523665_tesss;" +
              "database=a0523665_newTester;" +

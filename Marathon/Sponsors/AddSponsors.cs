@@ -23,34 +23,20 @@ namespace Marathon.Sponsors
         public string Id,Id2;
         public string Sum;
         public static int value,charity;
+        bool checkCancelButton = false;
+        string messageError;
+        public static string sponsorName;
+        public static int num;
+        public static string[] fullName;
         public AddSponsors()
         {
-            string role = "R";
             InitializeComponent();
             this.Resizable = false;
             this.MaximizeBox = false;
             this.ControlBox = false;
             metroTextBoxCharitySum.Text = "0";
             timer1.Start();
-            MySqlConnection connection = new MySqlConnection(MySQL.connectionUrl);//необходимая команда MySql
-            MySqlConnection connection1 = new MySqlConnection(MySQL.connectionUrl);//необходимая команда MySql
-            connection.Open();//необходимая команда MySql
-            connection1.Open();//необходимая команда MySql
-           
-            MySqlCommand user = new MySqlCommand("SELECT FirstName, LastName FROM user WHERE RoleId =\"" + role + "\"  ", connection);//вытаскиваем имена по RoleId = R 
-            MySqlDataReader reader = user.ExecuteReader();//команда для выборки данных из таблицы сonnection
-            MySqlCommand runner = new MySqlCommand("SELECT RunnerId, CountryCode FROM runner", connection1);//вытаскиваем RunnerId и CountryCode
-            MySqlDataReader runnerreader = runner.ExecuteReader();//команда для выборки данных из таблицы сonnection1
-
-            while (reader.Read()&& runnerreader.Read())
-            {
-                name = reader.GetString("FirstName") + " " + reader.GetString("LastName") ;//name становится именем и фамилией бегуна 
-                Id = runnerreader.GetString("RunnerId") + " " + runnerreader.GetString("CountryCode");//Id становится RunnerId и CountryCode-ом
-                Sum = name + " " + Id;//склеиваем их
-                metroComboBoxRunner.Items.Add(Sum);//добавляем склейку в комбобокс
-            }
-            connection.Close();//необходимая команда MySql
-            connection1.Close();//необходимая команда MySql
+            showRunner();
         }
         private void timer1_Tick(object sender, EventArgs e)
         {
@@ -104,10 +90,55 @@ namespace Marathon.Sponsors
                 e.Handled = true;
             }
         }
-
+        private void checkField(string name, string authorCard, string numberCard, int cardMonth, int cardYear, string cvc, int money)
+        {
+            this.messageError = "";
+            if (String.IsNullOrEmpty(name))
+            {
+                this.messageError = "Заполните обязательное поле Имя!";
+            }
+            else if (numberCard.Length != 16)
+            {
+                this.messageError = "Код карты должен состоять из 16 цифр";
+            }
+            else if (cvc.Length != 3)
+            {
+                this.messageError = "CVC код должен содержать 3 цифры";
+            }
+            else if (money <= 0)
+            {
+                this.messageError = "Невозможно пожертвовать 0$";
+            }
+        }
         private void metroButton3_Click(object sender, EventArgs e)
         {
-
+            string name = metroTextBoxNameCard.Text;
+            string cardNumber = metroTextBoxCardNum.Text;
+            string cardCVC = metroTextBoxCVC.Text;
+            int money = Convert.ToInt32(metroTextBoxCharitySum.Text);
+            string authorCard = metroTextBoxNameCard.Text;
+            int cardMonth = Convert.ToInt32(metroTextBoxDD.Text);
+            int cardYear = Convert.ToInt32(metroTextBoxYYYY.Text);
+            checkField(name, authorCard, cardNumber, cardMonth, cardYear, cardCVC, money);
+            if (!String.IsNullOrEmpty(this.messageError))
+            {
+                MessageBox.Show(this.messageError, "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                fullName = metroComboBoxRunner.SelectedItem.ToString().Split(new char[] { ' ', '.' });
+                num = money;
+                int idRunner = Convert.ToInt32(metroComboBoxRunner.SelectedItem.ToString().Split('.')[0]);
+                string sql = String.Format("INSERT INTO Sponsorship (SponsorName, RegistrationId, Amount) VALUES ('{0}', '{1}', '{2}')", name, idRunner, money);
+                Program.connectuon.Open();
+                MySqlCommand command = new MySqlCommand(sql, Program.connectuon);
+                command.ExecuteNonQuery();
+                Program.connectuon.Close();
+                ConfirmDonate formConfirmDonate = new ConfirmDonate();
+                checkCancelButton = true;
+                formConfirmDonate.Show();
+                this.Close();
+            }
         }
 
         private void metroButtonMinus_Click(object sender, EventArgs e)
@@ -126,7 +157,24 @@ namespace Marathon.Sponsors
                 metroTextBoxCharitySum.Text = Convert.ToString(a);
             }
         }
-
+        public void showRunner()
+        {
+            try
+            {
+                metroComboBoxRunner.Items.Clear();
+                Program.connectuon.Open();
+                MySqlCommand command = new MySqlCommand("SELECT Registration.RegistrationId, User.LastName, User.FirstName FROM Registration, User WHERE Registration.RunnerId = (SELECT Runner.RunnerId FROM Runner WHERE Runner.Email = User.Email)", Program.connectuon);
+                MySqlDataReader reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    metroComboBoxRunner.Items.Add($"{reader.GetString("RegistrationId")}. {reader.GetString("FirstName")}  {reader.GetString("LastName")}");
+                }
+                reader.Close();
+                metroComboBoxRunner.SelectedIndex = 1;
+            }
+            catch { }
+            finally { Program.connectuon.Close(); }
+        }
         private void metroComboBoxRunner_SelectedIndexChanged(object sender, EventArgs e)
         {
             metroLabelCharityName.Text = metroComboBoxRunner.SelectedItem.ToString();

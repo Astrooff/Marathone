@@ -204,6 +204,12 @@
     <Compile Include="Sponsors\CharityInfo.Designer.cs">
       <DependentUpon>CharityInfo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Sponsors\ConfirmDonate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sponsors\ConfirmDonate.Designer.cs">
+      <DependentUpon>ConfirmDonate.cs</DependentUpon>
+    </Compile>
     <Compile Include="StartScreen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -282,6 +288,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Sponsors\CharityInfo.resx">
       <DependentUpon>CharityInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sponsors\ConfirmDonate.resx">
+      <DependentUpon>ConfirmDonate.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="StartScreen.resx">
       <DependentUpon>StartScreen.cs</DependentUpon>
