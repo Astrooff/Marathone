@@ -173,7 +173,7 @@
             this.metroTextBoxNameCard.MaxLength = 32767;
             this.metroTextBoxNameCard.Name = "metroTextBoxNameCard";
             this.metroTextBoxNameCard.PasswordChar = '\0';
-            this.metroTextBoxNameCard.PromptText = "в";
+            this.metroTextBoxNameCard.PromptText = "Владелец карты";
             this.metroTextBoxNameCard.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.metroTextBoxNameCard.SelectedText = "";
             this.metroTextBoxNameCard.SelectionLength = 0;
@@ -182,7 +182,7 @@
             this.metroTextBoxNameCard.Size = new System.Drawing.Size(254, 29);
             this.metroTextBoxNameCard.TabIndex = 59;
             this.metroTextBoxNameCard.UseSelectable = true;
-            this.metroTextBoxNameCard.WaterMark = "в";
+            this.metroTextBoxNameCard.WaterMark = "Владелец карты";
             this.metroTextBoxNameCard.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.metroTextBoxNameCard.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
@@ -205,6 +205,7 @@
             this.metroTextBoxCardNum.MaxLength = 32767;
             this.metroTextBoxCardNum.Name = "metroTextBoxCardNum";
             this.metroTextBoxCardNum.PasswordChar = '\0';
+            this.metroTextBoxCardNum.PromptText = "1234 1234 1234 1234";
             this.metroTextBoxCardNum.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.metroTextBoxCardNum.SelectedText = "";
             this.metroTextBoxCardNum.SelectionLength = 0;
@@ -213,6 +214,7 @@
             this.metroTextBoxCardNum.Size = new System.Drawing.Size(254, 29);
             this.metroTextBoxCardNum.TabIndex = 59;
             this.metroTextBoxCardNum.UseSelectable = true;
+            this.metroTextBoxCardNum.WaterMark = "1234 1234 1234 1234";
             this.metroTextBoxCardNum.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.metroTextBoxCardNum.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
@@ -244,6 +246,7 @@
             this.metroTextBoxDD.MaxLength = 32767;
             this.metroTextBoxDD.Name = "metroTextBoxDD";
             this.metroTextBoxDD.PasswordChar = '\0';
+            this.metroTextBoxDD.PromptText = "01";
             this.metroTextBoxDD.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.metroTextBoxDD.SelectedText = "";
             this.metroTextBoxDD.SelectionLength = 0;
@@ -252,6 +255,7 @@
             this.metroTextBoxDD.Size = new System.Drawing.Size(40, 29);
             this.metroTextBoxDD.TabIndex = 59;
             this.metroTextBoxDD.UseSelectable = true;
+            this.metroTextBoxDD.WaterMark = "01";
             this.metroTextBoxDD.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.metroTextBoxDD.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
@@ -274,6 +278,7 @@
             this.metroTextBoxCVC.MaxLength = 32767;
             this.metroTextBoxCVC.Name = "metroTextBoxCVC";
             this.metroTextBoxCVC.PasswordChar = '\0';
+            this.metroTextBoxCVC.PromptText = "123";
             this.metroTextBoxCVC.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.metroTextBoxCVC.SelectedText = "";
             this.metroTextBoxCVC.SelectionLength = 0;
@@ -282,6 +287,7 @@
             this.metroTextBoxCVC.Size = new System.Drawing.Size(60, 29);
             this.metroTextBoxCVC.TabIndex = 59;
             this.metroTextBoxCVC.UseSelectable = true;
+            this.metroTextBoxCVC.WaterMark = "123";
             this.metroTextBoxCVC.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.metroTextBoxCVC.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
@@ -322,6 +328,7 @@
             this.metroTextBoxYYYY.MaxLength = 32767;
             this.metroTextBoxYYYY.Name = "metroTextBoxYYYY";
             this.metroTextBoxYYYY.PasswordChar = '\0';
+            this.metroTextBoxYYYY.PromptText = "2021";
             this.metroTextBoxYYYY.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.metroTextBoxYYYY.SelectedText = "";
             this.metroTextBoxYYYY.SelectionLength = 0;
@@ -330,6 +337,7 @@
             this.metroTextBoxYYYY.Size = new System.Drawing.Size(80, 29);
             this.metroTextBoxYYYY.TabIndex = 59;
             this.metroTextBoxYYYY.UseSelectable = true;
+            this.metroTextBoxYYYY.WaterMark = "2021";
             this.metroTextBoxYYYY.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.metroTextBoxYYYY.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 

@@ -33,6 +33,7 @@
             this.labelFund = new System.Windows.Forms.Label();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.metrolabelNameRunner = new MetroFramework.Controls.MetroLabel();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // buttonBMR
@@ -41,11 +42,11 @@
             this.buttonBMR.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
             this.buttonBMR.FlatAppearance.BorderSize = 2;
             this.buttonBMR.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonBMR.Font = new System.Drawing.Font("Consolas", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonBMR.Location = new System.Drawing.Point(293, 343);
+            this.buttonBMR.Font = new System.Drawing.Font("Gadugi", 17.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonBMR.Location = new System.Drawing.Point(311, 370);
             this.buttonBMR.Margin = new System.Windows.Forms.Padding(2);
             this.buttonBMR.Name = "buttonBMR";
-            this.buttonBMR.Size = new System.Drawing.Size(226, 56);
+            this.buttonBMR.Size = new System.Drawing.Size(178, 42);
             this.buttonBMR.TabIndex = 13;
             this.buttonBMR.Text = "Назад";
             this.buttonBMR.UseVisualStyleBackColor = false;
@@ -100,6 +101,21 @@
             this.metrolabelNameRunner.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.metrolabelNameRunner.UseStyleColors = true;
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
+            this.button1.FlatAppearance.BorderSize = 2;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Gadugi", 17.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(6, 16);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(84, 42);
+            this.button1.TabIndex = 13;
+            this.button1.Text = "Назад";
+            this.button1.UseVisualStyleBackColor = false;
+            // 
             // ConfirmDonate
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -107,6 +123,7 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.metrolabelNameRunner);
             this.Controls.Add(this.metroLabel1);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.buttonBMR);
             this.Controls.Add(this.labelCountDonate);
             this.Controls.Add(this.labelFund);
@@ -123,5 +140,6 @@
         private System.Windows.Forms.Label labelFund;
         private MetroFramework.Controls.MetroLabel metroLabel1;
         private MetroFramework.Controls.MetroLabel metrolabelNameRunner;
+        private System.Windows.Forms.Button button1;
     }
 }
